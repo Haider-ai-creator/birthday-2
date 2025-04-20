@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Aqsa</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffc0d9fb, #ff9eff);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      color: #d1006b;
+      font-size: 28px;
+      margin-top: 20px;
+      text-shadow: 1px 1px 4px #ff88c3;
+    }
+
+    p {
+      font-size: 14px;
+      color: #660033;
+      margin: 6px 0;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      padding: 0 10px;
+    }
+
+    .heart {
+      font-size: 36px;
+      color: red;
+      animation: beat 1s infinite;
+      margin: 10px 0;
+      text-shadow: 0 0 6px red;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .message {
+      font-size: 16px;
+      color: #b30059;
+      font-weight: bold;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 6px #ff66b2; }
+      to { text-shadow: 0 0 12px #ff1a8c; }
+    }
+
+    .box {
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      padding: 6px;
+      width: 70%;
+      max-width: 240px;
+      border: none;
+      border-radius: 12px;
+      font-size: 14px;
+      outline: none;
+      box-shadow: 0 0 6px #ffb3e2;
+    }
+
+    button {
+      padding: 6px 12px;
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 14px;
+      margin-left: 6px;
+      cursor: pointer;
+      box-shadow: 0 0 6px #ff66b2;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    .reply {
+      font-size: 16px;
+      color: #cc0066;
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .special {
+      font-size: 18px;
+      color: #ff0066;
+      margin-top: 20px;
+      font-weight: bold;
+      display: none;
+      animation: glow 1s infinite alternate;
+    }
+
+    .floating-heart {
+      position: absolute;
+      color: pink;
+      font-size: 18px;
+      animation: float 6s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% { bottom: 0; transform: translateX(0); }
+      100% { bottom: 100%; transform: translateX(50px); }
+    }
+
+    /* Mobile Fixes */
+    @media screen and (max-width: 480px) {
+      h1 { font-size: 24px; }
+      .heart { font-size: 26px; }
+      .message, .reply, .special { font-size: 13px; padding: 0 8px; }
+      input[type="text"] { width: 80%; font-size: 13px; }
+      button { font-size: 12px; padding: 5px 8px; margin-top: 6px; display: block; width: 50%; margin: 10px auto 0; }
+      .box p { font-size: 16px; padding: 0 10px; }
+      .reply, .special { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy Birthday Aqsa 🎉</h1>
+  <div class="heart">❤</div>
+
+  <p>To my Shehzadi, my moon, my world...</p>
+  <p>You are the reason Ali smiles every single day.</p>
+
+  <!-- Prayer Section Starts -->
+  <div style="margin: 40px auto; max-width: 600px; background: #fff0f5; border-radius: 20px; padding: 20px; box-shadow: 0 0 15px #ff99cc; max-height: 250px; overflow-y: auto;">
+    <p style="font-size: 24px; color: #b30059; font-weight: bold; margin-bottom: 10px;">🌸 A Special Birthday Dua for my love 🌸</p>
+    <p style="font-size: 16px; color: #660033; line-height: 100%;">
+      On this special day, I pray that Allah blesses you with endless joy, good health, and success in everything you do.
+      May your heart always be filled with love, peace, and happiness.
+      May Allah guide you, protect you, and grant all your desires in this life and the hereafter.
+      Keep shining bright and spreading kindness wherever you go. Ameen.
+    </p>
+    <p style="font-size: 16px; color: #660033; margin-top: 5px;">
+      O Allah, grant Aqsa happiness that never ends.
+    </p>
+  </div>
+  <!-- Prayer Section Ends -->
+
+  <div class="message">Ali loves you endlessly 💖</div>
+
+  <div class="box">
+    <p style="font-size: 22px; color: #99004d;">Can you Say it back, Aqsa? 🥺</p>
+    <input type="text" id="replyInput" placeholder="Type your message here..." />
+    <button onclick="showReply()">Send</button>
+  </div>
+
+  <div class="reply" id="replyBox"></div>
+  <div class="special" id="specialBox">"Aqsa proved that Ali is the luckiest man in the world." 💖</div>
+
+  <!-- Floating hearts -->
+  <script>
+    function showReply() {
+      const reply = document.getElementById('replyInput').value.trim().toLowerCase();
+      const replyBox = document.getElementById('replyBox');
+      const specialBox = document.getElementById('specialBox');
+
+      if (reply !== '') {
+        replyBox.innerText = "I love you too jaan";
+        replyBox.style.display = 'block';
+
+        if (reply === "i love you" || reply.includes("i love you")) {
+          specialBox.style.display = 'block';
+        } else {
+          specialBox.style.display = 'none';
+        }
+      }
+    }
+
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("floating-heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+      heart.innerText = "❤";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }, 500);
+  </script>
+
+</body>
+</html>
